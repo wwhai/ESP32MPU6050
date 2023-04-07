@@ -22,3 +22,11 @@ rap = [0.42, 1.46, 13.1, 0.78, -3.24, 6.16];
 basketball = [-25.4, -12.81, -11.7, 0.73, 3.41, -1.12];
 ```
 ![2](image/readme/1680879656420.png)
+
+## 参考
+- https://github.com/trekhleb/machine-learning-octave/blob/master/neural-network/README.md
+- https://www.mathworks.com/help/deeplearning/gs/fit-data-with-a-neural-network_zh_CN.html
+- https://zhuanlan.zhihu.com/p/96678182
+- https://github.com/trekhleb/machine-learning-octave/tree/master/neural-network
+- https://www.cnblogs.com/subconscious/p/5058741.html
+- https://cloud.tencent.com/developer/article/2138855
