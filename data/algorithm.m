@@ -7,6 +7,8 @@ clear
 %% 先取出提前采集到的的样本数据, 4个动作各自采集了100组, 意味着有400条样本, 必须有400个Tag
 x = csvread("ikun.csv"); % 加载CSV数据
 t = csvread("tag.csv"); % 建立Tag
+X = x.';
+T = t.';
 %%--------------------------------------------------------------------------------------------------
 trainFcn = 'trainlm'; % 使用 Levenberg-Marquardt 算法训练网络
 hiddenLayerSize = 10; % 隐藏层节点数
@@ -20,19 +22,45 @@ net.divideParam.testRatio = 15/100;
 %%--------------------------------------------------------------------------------------------------
 
 % 训练网络 x t 需要矩阵转置
-[net, tr] = train(net, x.', t.');
+[net, tr] = train(net, X, T);
 
 % 测试网络
-y = net(x.');
-e = gsubtract(t.', y.'); % 计算预测误差
-perform(net, t.', y.'); % 计算网络性能指标
+y = net(X);
+e = gsubtract(T, y.'); % 计算预测误差
+perform(net, T, y.'); % 计算网络性能指标
+%%
+sing = [-0.81, 0.97, 9.96, -0.02, 0.16, -0.05];
+song = [-1.21, -5.46, 7.91, -0.96, 1.59, -0.24];
+rap = [0.42, 1.46, 13.1, 0.78, -3.24, 6.16];
+basketball = [-25.4, -12.81, -11.7, 0.73, 3.41, -1.12];
+%%
+O1 = sim(net, sing.');
+O2 = sim(net, song.');
+O3 = sim(net, rap.');
+O4 = sim(net, basketball.');
 
-% 查看网络结构
-% view(net)
-% 绘图
-% 如果需要，取消下面代码行的注释以启用不同的绘图
-% figure, plotperform(tr) % 绘制性能图
-% figure, plottrainstate(tr) % 绘制训练状态图
-% figure, ploterrhist(e) % 绘制误差直方图
-% figure, plotregression(t.', y.') % 绘制回归图
-% figure, plotfit(net, x.', t.') % 绘制拟合图
+if fix(O1) == 1
+    disp('唱')
+end
+
+if fix(O2) == 2
+    disp('跳')
+end
+
+if fix(O3) == 3
+    disp('RAP')
+end
+
+if fix(O4) == 4
+    disp('篮球')
+end
+
+% classes1 = vec2ind(O1);
+% classes2 = vec2ind(O2);
+% classes3 = vec2ind(O3);
+% classes4 = vec2ind(O4);
+
+% disp(classes1);
+% disp(classes2);
+% disp(classes3);
+% disp(classes4);
