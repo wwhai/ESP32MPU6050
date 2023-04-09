@@ -40,7 +40,7 @@ int main()
             double d6 = down + ((double)rand() / RAND_MAX) * (top - down);
             double d7 = down + ((double)rand() / RAND_MAX) * (top - down);
             double d8 = down + ((double)rand() / RAND_MAX) * (top - down);
-            fprintf(fp, "%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,D\n",
+            fprintf(fp, "%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,C\n",
                     d1, d2, d3, d4, d5, d6, d7, d8);
         }
     }
@@ -56,7 +56,7 @@ int main()
             double d6 = down + ((double)rand() / RAND_MAX) * (top - down);
             double d7 = down + ((double)rand() / RAND_MAX) * (top - down);
             double d8 = down + ((double)rand() / RAND_MAX) * (top - down);
-            fprintf(fp, "%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,D\n",
+            fprintf(fp, "%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,B\n",
                     d1, d2, d3, d4, d5, d6, d7, d8);
         }
     }
@@ -72,23 +72,7 @@ int main()
             double d6 = down + ((double)rand() / RAND_MAX) * (top - down);
             double d7 = down + ((double)rand() / RAND_MAX) * (top - down);
             double d8 = down + ((double)rand() / RAND_MAX) * (top - down);
-            fprintf(fp, "%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,D\n",
-                    d1, d2, d3, d4, d5, d6, d7, d8);
-        }
-    }
-    {
-        double down = 25.00, top = 25.99;
-        for (int i = 0; i < 1000; i++)
-        {
-            double d1 = down + ((double)rand() / RAND_MAX) * (top - down);
-            double d2 = down + ((double)rand() / RAND_MAX) * (top - down);
-            double d3 = down + ((double)rand() / RAND_MAX) * (top - down);
-            double d4 = down + ((double)rand() / RAND_MAX) * (top - down);
-            double d5 = down + ((double)rand() / RAND_MAX) * (top - down);
-            double d6 = down + ((double)rand() / RAND_MAX) * (top - down);
-            double d7 = down + ((double)rand() / RAND_MAX) * (top - down);
-            double d8 = down + ((double)rand() / RAND_MAX) * (top - down);
-            fprintf(fp, "%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,D\n",
+            fprintf(fp, "%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,A\n",
                     d1, d2, d3, d4, d5, d6, d7, d8);
         }
     }
